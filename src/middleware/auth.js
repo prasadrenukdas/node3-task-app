@@ -14,7 +14,7 @@ const auth = async (req, res, next) => {
     });
 
     if (!user) {
-        return res.status(400).send();
+      return res.status(400).send();
     }
 
     request.token = token;
@@ -22,7 +22,7 @@ const auth = async (req, res, next) => {
 
     next();
   } catch (err) {
-    res.send("Invalid credentials");
+    res.status(400).send("Invalid credentials");
   }
 };
 
